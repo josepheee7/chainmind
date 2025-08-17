@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8B5CF6" />
+    <meta name="description" content="ChainMind AI - AI-Powered Predictive Governance for DAOs" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chainmind.ai/" />
+    <meta property="og:title" content="ChainMind AI Oracle" />
+    <meta property="og:description" content="Harness advanced AI to predict DAO proposal outcomes with 90%+ accuracy" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://chainmind.ai/" />
+    <meta property="twitter:title" content="ChainMind AI Oracle" />
+    <meta property="twitter:description" content="AI-Powered Predictive Governance for DAOs" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>ChainMind AI Oracle - Predictive DAO Governance</title>
+    
+    <style>
+      /* Loading screen */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0f172a 0%, #4c1d95 50%, #0f172a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      #loading.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loader {
+        width: 60px;
+        height: 60px;
+        border: 3px solid rgba(139, 92, 246, 0.3);
+        border-top: 3px solid #8b5cf6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Loading Screen -->
+    <div id="loading">
+      <div>
+        <div class="loader"></div>
+        <div class="loading-text">Loading ChainMind AI...</div>
+      </div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide loading screen when React app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loading = document.getElementById('loading');
+          if (loading) {
+            loading.classList.add('fade-out');
+            setTimeout(function() {
+              loading.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+      
+      // Ethereum detection
+      if (typeof window.ethereum !== 'undefined') {
+        console.log('MetaMask is installed!');
+      } else {
+        console.log('Please install MetaMask!');
+      }
+    </script>
+  </body>
+</html>

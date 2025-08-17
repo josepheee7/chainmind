@@ -1,0 +1,45 @@
+{
+  "name": "chainmind-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for ChainMind AI-Powered Predictive Governance DAO",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network hardhat",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:mumbai": "npx hardhat run scripts/deploy.js --network mumbai",
+    "verify:sepolia": "npx hardhat verify --network sepolia",
+    "gas-report": "REPORT_GAS=true npx hardhat test",
+    "coverage": "npx hardhat coverage",
+    "clean": "npx hardhat clean",
+    "node": "npx hardhat node",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "dao",
+    "governance",
+    "ai",
+    "blockchain",
+    "hackathon"
+  ],
+  "author": "ChainMind Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@openzeppelin/contracts": "^4.9.3",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solhint": "^3.6.2",
+    "solidity-coverage": "^0.8.4"
+  },
+  "dependencies": {
+    "ethers": "^6.7.1"
+  },
+  "type": "commonjs"
+}
