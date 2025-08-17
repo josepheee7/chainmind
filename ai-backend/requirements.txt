@@ -1,0 +1,79 @@
+# FastAPI and Server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+pydantic>=2.4.0
+
+# Machine Learning and AI
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+tensorflow>=2.13.0
+torch>=2.0.0
+transformers>=4.30.0
+
+# Natural Language Processing
+nltk>=3.8.1
+spacy>=3.6.0
+textblob>=0.17.1
+
+# Data Processing
+scipy>=1.10.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Web3 and Blockchain
+web3>=6.11.0
+eth-account>=0.9.0
+eth-utils>=2.2.0
+
+# Database
+sqlalchemy>=2.0.0
+# sqlite3 is built into Python, no need to install
+psycopg2-binary>=2.9.0  # PostgreSQL support
+redis>=4.6.0
+
+# HTTP and APIs
+requests>=2.31.0
+httpx>=0.24.0
+aiohttp>=3.8.0
+
+# Environment and Configuration
+python-dotenv>=1.0.0
+pydantic-settings>=2.0.0
+
+# Monitoring and Logging
+loguru>=0.7.0
+prometheus-client>=0.17.0
+
+# Async Support
+asyncio
+aiofiles>=23.0.0
+
+# Data Validation
+cerberus>=1.3.4
+marshmallow>=3.20.0
+
+# Caching
+cachetools>=5.3.0
+
+# Testing (Development)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Security
+cryptography>=41.0.0
+bcrypt>=4.0.0
+
+# Performance
+numba>=0.57.0  # JIT compilation for NumPy
+
+# Demo and Development Support
+colorama>=0.4.6
+slowapi>=0.1.9
+aioredis>=2.0.1
+
+# AI Enhancement
+google-generativeai>=0.3.0

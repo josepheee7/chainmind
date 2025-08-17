@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # ChainMind Revolutionary AI Backend
+  chainmind-backend:
+    build:
+      context: ./ai-backend
+      dockerfile: Dockerfile
+    container_name: chainmind-revolutionary-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - HOST=0.0.0.0
+      - PORT=8000
+      - LOG_LEVEL=info
+      - CHAINMIND_ENV=production
+      - BUILT_FOR=vitalik-buterin
+    volumes:
+      - ./ai-backend:/app
+    networks:
+      - chainmind-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ChainMind Revolutionary Frontend
+  chainmind-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: chainmind-revolutionary-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_AI_BACKEND_URL=http://chainmind-backend:8000
+      - API_URL=http://chainmind-backend:8000
+      - ENVIRONMENT=production
+      - BUILT_FOR=vitalik-buterin
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    networks:
+      - chainmind-network
+    restart: unless-stopped
+    depends_on:
+      chainmind-backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  chainmind-network:
+    driver: bridge
+    name: chainmind-revolutionary-network
+
+volumes:
+  chainmind-data:
+    name: chainmind-revolutionary-data
