@@ -2,8 +2,6 @@
 
 ![ChainMind Logo](https://img.shields.io/badge/ChainMind-AI%20Governance-blue?style=for-the-badge&logo=ethereum)
 
-> **Selected from 3 million projects and judged by Ethereum's founder** - ChainMind is the first DAO to use artificial intelligence for governance decisions with 87%+ prediction accuracy.
-
 ## 🚀 Live Demo
 
 **Production Ready Application**: [ChainMind Governance Platform](http://localhost:3000)
@@ -267,34 +265,3 @@ vercel --prod
 4. Add tests
 5. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🏆 Awards & Recognition
-
-- **Selected from 3 million projects** for innovation and impact
-- **Judged by Ethereum's founder** for technical excellence
-- **Top 50 projects** in global blockchain hackathon
-- **Silicon Valley grade** production-ready application
-
-## 📞 Support
-
-- **Documentation**: [docs.chainmind.io](https://docs.chainmind.io)
-- **Discord**: [discord.gg/chainmind](https://discord.gg/chainmind)
-- **Twitter**: [@chainmind_dao](https://twitter.com/chainmind_dao)
-- **Email**: support@chainmind.io
-
-## 🙏 Acknowledgments
-
-- Ethereum Foundation for blockchain infrastructure
-- OpenZeppelin for secure smart contracts
-- MetaMask for wallet integration
-- Hardhat for development tools
-- React and Tailwind for UI framework
-
----
-
-**Built with ❤️ for the future of decentralized governance**
-
-*ChainMind - Where AI meets DAO governance*
